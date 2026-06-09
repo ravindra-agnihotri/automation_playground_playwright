@@ -1,19 +1,18 @@
 package tests;
 
 import com.microsoft.playwright.Page;
+import manager.execution.BaseClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import manager.playwright.PageManager;
 import util.Util;
 
-public class Alerts {
-    private Page page=null;
+public class Alerts  extends BaseClass {
 
 
     int id=1;
     @BeforeClass
     public void beforeClass(){
-       page= PageManager.getPage();
        page.navigate("pages/alerts.html");
     }
 

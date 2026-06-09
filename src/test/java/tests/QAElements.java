@@ -2,19 +2,19 @@ package tests;
 
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import manager.execution.BaseClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import manager.playwright.PageManager;
 import util.Util;
 
-public class QAElements {
+public class QAElements extends BaseClass {
 
 
     Page page = null;
 
     @BeforeClass
     public void beforeClass() {
-        page = PageManager.getPage();
         page.navigate("/pages/a.html");
     }
 

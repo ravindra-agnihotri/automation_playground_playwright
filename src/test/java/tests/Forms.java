@@ -3,6 +3,7 @@ package tests;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
+import manager.execution.BaseClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import manager.playwright.PageManager;
@@ -10,14 +11,12 @@ import util.Util;
 
 import java.nio.file.Paths;
 
-public class Forms {
-    Page page=null;
+public class Forms extends BaseClass {
 
 
     int id=12;
     @BeforeClass
     public void getPage(){
-       page= PageManager.getPage();
        page.navigate("pages/forms.html");
     }
 
