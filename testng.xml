@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" parallel="classes" thread-count="2" preserve-order="true" name="/Users/ravindraagnihotri/Documents/3M plan/playwright_java">
+        <classes>
+            <class name="tests.Alerts">
+                <methods>
+                    <include name="alert"/>
+                </methods>
+            </class>
+            <class name="tests.DargAndDrop">
+                <methods>
+                    <include name="dragAndDrop"/>
+                </methods>
+            </class>
+            <class name="tests.Forms">
+                <methods>
+                    <include name="formsTest"/>
+                </methods>
+            </class>
+            <class name="tests.QAElements">
+                <methods>
+                    <include name="allElem"/>
+                </methods>
+            </class>
+            <class name="tests.ShadowDOM">
+                <methods>
+                    <include name="shadowDom"/>
+                </methods>
+            </class>
+            <class name="tests.Tabs">
+                <methods>
+                    <include name="tabOps"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
