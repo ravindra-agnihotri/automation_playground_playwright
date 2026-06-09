@@ -3,6 +3,7 @@ package tests;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import manager.execution.BaseClass;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import manager.playwright.PageManager;
@@ -11,10 +12,10 @@ import util.Util;
 public class QAElements extends BaseClass {
 
 
-    Page page = null;
 
     @BeforeClass
     public void beforeClass() {
+        page=PageManager.getPage();
         page.navigate("/pages/a.html");
     }
 
@@ -61,4 +62,7 @@ public class QAElements extends BaseClass {
         page.locator("button[data-testid='btn-modal-open']").scrollIntoViewIfNeeded();
         page.locator("button[data-testid=btn-modal-open]").click();
         page.locator("button[data-testid=modal-confirm]").click();
-}}
+}
+
+
+}

@@ -12,24 +12,24 @@ import org.testng.annotations.BeforeTest;
 
 public class BaseClass {
 
-    protected  Page page=null;
+    protected  Page page;
+
+
 
     @BeforeSuite
     public void beforeSuite(){
+        System.out.println("Running Before Suite");
         PlaywrightProvider.getPlaywright();
-
-    }
-
-    @BeforeTest
-    public void beforeTest(){
         BrowserFactory.getBrowser();
         ContextManager.createContext();
         page=PageManager.getPage();
     }
 
 
+
 @AfterSuite
     public void afterSuite(){
+    System.out.println("Running After Suite");
         PageManager.closePage();
         ContextManager.closeContext();
         BrowserFactory.closeBrowser();

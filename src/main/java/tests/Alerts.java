@@ -2,6 +2,7 @@ package tests;
 
 import com.microsoft.playwright.Page;
 import manager.execution.BaseClass;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import manager.playwright.PageManager;
@@ -13,8 +14,10 @@ public class Alerts  extends BaseClass {
     int id=1;
     @BeforeClass
     public void beforeClass(){
-       page.navigate("pages/alerts.html");
+        page= PageManager.getPage();
+        page.navigate("pages/alerts.html");
     }
+
 
 
     @Test

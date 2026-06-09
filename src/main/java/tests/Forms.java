@@ -4,6 +4,8 @@ import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 import manager.execution.BaseClass;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import manager.playwright.PageManager;
@@ -16,7 +18,8 @@ public class Forms extends BaseClass {
 
     int id=12;
     @BeforeClass
-    public void getPage(){
+    public void beforeClass(){
+        page=PageManager.getPage();
        page.navigate("pages/forms.html");
     }
 
@@ -54,4 +57,6 @@ time.press("Control+A");
         }
 
     }
+
+
 }
