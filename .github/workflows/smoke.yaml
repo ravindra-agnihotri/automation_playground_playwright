@@ -3,10 +3,15 @@ name: Smoke Tests
 on:
   workflow_dispatch:
 
+  repository_dispatch:
+    types:
+      - run-smoke-tests
+
 jobs:
   smoke:
     env:
       HEADLESS: true
+
     runs-on: ubuntu-latest
 
     steps:
@@ -17,7 +22,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: 21
+          java-version: '21'
 
       - name: Run Tests
         run: mvn clean test
