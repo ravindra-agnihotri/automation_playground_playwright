@@ -5,6 +5,8 @@ on:
 
 jobs:
   smoke:
+    env:
+      HEADLESS: true
     runs-on: ubuntu-latest
 
     steps:
